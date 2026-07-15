@@ -1,71 +1,79 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { courses } from "@/lib/course-data"
-import Dashboard from "@/components/dashboard"
-import ChapterView from "@/components/chapter-view"
-import Sidebar from "@/components/sidebar"
-import MockExam from "@/components/mock-exam"
-import WaterBackground from "@/components/water-background"
+import { useState, useEffect } from "react";
+import { courses } from "@/lib/course-data";
+import Dashboard from "@/components/dashboard";
+import ChapterView from "@/components/chapter-view";
+import Sidebar from "@/components/sidebar";
+import MockExam from "@/components/mock-exam";
+import WaterBackground from "@/components/water-background";
 
-type View = "dashboard" | "chapter" | "mock-exam"
+type View = "dashboard" | "chapter" | "mock-exam";
 
 export default function Home() {
-  const [view, setView] = useState<View>("dashboard")
-  const [activeChapterId, setActiveChapterId] = useState<string | null>(null)
-  const [completedChapters, setCompletedChapters] = useState<Set<string>>(new Set())
-  const [quizScores, setQuizScores] = useState<Record<string, number>>({})
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [view, setView] = useState<View>("dashboard");
+  const [activeChapterId, setActiveChapterId] = useState<string | null>(null);
+  const [completedChapters, setCompletedChapters] = useState<Set<string>>(
+    new Set(),
+  );
+  const [quizScores, setQuizScores] = useState<Record<string, number>>({});
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("ip-study-progress")
+    const stored = localStorage.getItem("ip-study-progress");
     if (stored) {
-      const data = JSON.parse(stored)
-      setCompletedChapters(new Set(data.completedChapters || []))
-      setQuizScores(data.quizScores || {})
+      const data = JSON.parse(stored);
+      setCompletedChapters(new Set(data.completedChapters || []));
+      setQuizScores(data.quizScores || {});
     }
-  }, [])
+  }, []);
 
-  const saveProgress = (completed: Set<string>, scores: Record<string, number>) => {
+  const saveProgress = (
+    completed: Set<string>,
+    scores: Record<string, number>,
+  ) => {
     localStorage.setItem(
       "ip-study-progress",
-      JSON.stringify({ completedChapters: Array.from(completed), quizScores: scores })
-    )
-  }
+      JSON.stringify({
+        completedChapters: Array.from(completed),
+        quizScores: scores,
+      }),
+    );
+  };
 
   const markChapterComplete = (chapterId: string) => {
-    const updated = new Set(completedChapters)
-    updated.add(chapterId)
-    setCompletedChapters(updated)
-    saveProgress(updated, quizScores)
-  }
+    const updated = new Set(completedChapters);
+    updated.add(chapterId);
+    setCompletedChapters(updated);
+    saveProgress(updated, quizScores);
+  };
 
   const saveQuizScore = (chapterId: string, score: number) => {
-    const updated = { ...quizScores, [chapterId]: score }
-    setQuizScores(updated)
-    saveProgress(completedChapters, updated)
-  }
+    const updated = { ...quizScores, [chapterId]: score };
+    setQuizScores(updated);
+    saveProgress(completedChapters, updated);
+  };
 
   const handleSelectChapter = (id: string) => {
-    setActiveChapterId(id)
-    setView("chapter")
-    setSidebarOpen(false)
-  }
+    setActiveChapterId(id);
+    setView("chapter");
+    setSidebarOpen(false);
+  };
 
   const handleSelectHome = () => {
-    setView("dashboard")
-    setActiveChapterId(null)
-    setSidebarOpen(false)
-  }
+    setView("dashboard");
+    setActiveChapterId(null);
+    setSidebarOpen(false);
+  };
 
   const handleOpenMockExam = () => {
-    setView("mock-exam")
-    setSidebarOpen(false)
-  }
+    setView("mock-exam");
+    setSidebarOpen(false);
+  };
 
   const activeChapter = activeChapterId
     ? courses.flatMap((c) => c.chapters).find((ch) => ch.id === activeChapterId)
-    : null
+    : null;
 
   return (
     <div className="flex h-screen overflow-hidden relative">
@@ -98,7 +106,9 @@ export default function Home() {
               isCompleted={completedChapters.has(activeChapter.id)}
               quizScore={quizScores[activeChapter.id]}
               onMarkComplete={() => markChapterComplete(activeChapter.id)}
-              onSaveQuizScore={(score) => saveQuizScore(activeChapter.id, score)}
+              onSaveQuizScore={(score) =>
+                saveQuizScore(activeChapter.id, score)
+              }
               onOpenSidebar={() => setSidebarOpen(true)}
               onBack={handleSelectHome}
             />
@@ -117,10 +127,10 @@ export default function Home() {
         {/* Footer */}
         <footer className="py-4 px-6 border-t border-border/50 text-center">
           <p className="text-xs text-muted-foreground">
-            Made with <span className="text-red-400">❤️</span> by Yishak
+            Made <span className="text-red-400"></span> by Yishak Mekuannent
           </p>
         </footer>
       </main>
     </div>
-  )
+  );
 }
