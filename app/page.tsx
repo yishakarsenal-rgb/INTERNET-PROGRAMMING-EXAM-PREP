@@ -77,7 +77,7 @@ export default function Home() {
 
   return (
     <div className="flex h-screen overflow-hidden relative">
-      {/* Animated water background */}
+      {/* animated water background */}
       <WaterBackground />
 
       <Sidebar
@@ -124,7 +124,7 @@ export default function Home() {
           )}
         </div>
 
-        {/* Footer */}
+        {/* footer */}
         <footer className="py-4 px-6 border-t border-border/50 text-center">
           <p className="text-xs text-muted-foreground">
             Made <span className="text-red-400"></span> by Yishak Mekuannent
