@@ -1,22 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Chapter } from "@/lib/course-data"
-import { CheckCircle2, ChevronLeft, BookOpen, ClipboardList, Menu, ChevronDown, ChevronUp } from "lucide-react"
-import QuizPanel from "@/components/quiz-panel"
-import ContentRenderer from "@/components/content-renderer"
-
-type Tab = "notes" | "quiz"
-
+import { useState } from "react";
+import { Chapter } from "@/lib/course-data";
+import {
+  CheckCircle2,
+  ChevronLeft,
+  BookOpen,
+  ClipboardList,
+  Menu,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
+import QuizPanel from "@/components/quiz-panel";
+import ContentRenderer from "@/components/content-renderer";
+type Tab = "notes" | "quiz";
 type Props = {
-  chapter: Chapter
-  isCompleted: boolean
-  quizScore: number | undefined
-  onMarkComplete: () => void
-  onSaveQuizScore: (score: number) => void
-  onOpenSidebar: () => void
-  onBack: () => void
-}
+  chapter: Chapter;
+  isCompleted: boolean;
+  quizScore: number | undefined;
+  onMarkComplete: () => void;
+  onSaveQuizScore: (score: number) => void;
+  onOpenSidebar: () => void;
+  onBack: () => void;
+};
 
 export default function ChapterView({
   chapter,
@@ -27,15 +33,19 @@ export default function ChapterView({
   onOpenSidebar,
   onBack,
 }: Props) {
-  const [tab, setTab] = useState<Tab>("notes")
-  const [activeSectionId, setActiveSectionId] = useState<string>(chapter.sections[0]?.id ?? "")
-  const isIPII = chapter.course === "IP-II"
+  const [tab, setTab] = useState<Tab>("notes");
+  const [activeSectionId, setActiveSectionId] = useState<string>(
+    chapter.sections[0]?.id ?? "",
+  );
+  const isIPII = chapter.course === "IP-II";
 
   const accentColor = isIPII
     ? "text-emerald-400 bg-emerald-500/10 border-emerald-500/30"
-    : "text-blue-400 bg-blue-500/10 border-blue-500/30"
+    : "text-blue-400 bg-blue-500/10 border-blue-500/30";
 
-  const badgeColor = isIPII ? "bg-emerald-500/20 text-emerald-400" : "bg-blue-500/20 text-blue-400"
+  const badgeColor = isIPII
+    ? "bg-emerald-500/20 text-emerald-400"
+    : "bg-blue-500/20 text-blue-400";
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -58,10 +68,14 @@ export default function ChapterView({
           </button>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
-              <span className={`text-xs px-2 py-0.5 rounded-full font-medium shrink-0 ${badgeColor}`}>
+              <span
+                className={`text-xs px-2 py-0.5 rounded-full font-medium shrink-0 ${badgeColor}`}
+              >
                 {chapter.course} · Ch.{chapter.number}
               </span>
-              <h1 className="text-sm font-semibold text-foreground truncate">{chapter.title}</h1>
+              <h1 className="text-sm font-semibold text-foreground truncate">
+                {chapter.title}
+              </h1>
             </div>
           </div>
           {!isCompleted ? (
@@ -84,8 +98,12 @@ export default function ChapterView({
       <div className="flex-1 max-w-4xl mx-auto w-full px-4 py-6">
         {/* Chapter info */}
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground text-balance mb-1">{chapter.title}</h2>
-          <p className="text-muted-foreground text-sm leading-relaxed">{chapter.description}</p>
+          <h2 className="text-xl font-bold text-foreground text-balance mb-1">
+            {chapter.title}
+          </h2>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            {chapter.description}
+          </p>
         </div>
 
         {/* Objectives */}
@@ -131,16 +149,16 @@ export default function ChapterView({
             questions={chapter.quiz}
             existingScore={quizScore}
             onComplete={(score) => {
-              onSaveQuizScore(score)
+              onSaveQuizScore(score);
               if (score >= chapter.quiz.length * 0.6) {
-                onMarkComplete()
+                onMarkComplete();
               }
             }}
           />
         )}
       </div>
     </div>
-  )
+  );
 }
 
 function TabButton({
@@ -149,10 +167,10 @@ function TabButton({
   icon,
   label,
 }: {
-  active: boolean
-  onClick: () => void
-  icon: React.ReactNode
-  label: string
+  active: boolean;
+  onClick: () => void;
+  icon: React.ReactNode;
+  label: string;
 }) {
   return (
     <button
@@ -166,7 +184,7 @@ function TabButton({
       {icon}
       {label}
     </button>
-  )
+  );
 }
 
 function NotesTab({
@@ -174,9 +192,9 @@ function NotesTab({
   activeSectionId,
   onSelectSection,
 }: {
-  chapter: Chapter
-  activeSectionId: string
-  onSelectSection: (id: string) => void
+  chapter: Chapter;
+  activeSectionId: string;
+  onSelectSection: (id: string) => void;
 }) {
   return (
     <div className="flex gap-6">
@@ -202,21 +220,25 @@ function NotesTab({
         </div>
       </nav>
 
-      {/* Section content */}
+      {/* section content */}
       <div className="flex-1 min-w-0">
-        {/* Mobile: accordion */}
+        {/* mobile accordion */}
         <div className="lg:hidden space-y-3 mb-4">
           {chapter.sections.map((section) => (
             <MobileSection
               key={section.id}
               section={section}
               isActive={activeSectionId === section.id}
-              onToggle={() => onSelectSection(section.id === activeSectionId ? "" : section.id)}
+              onToggle={() =>
+                onSelectSection(
+                  section.id === activeSectionId ? "" : section.id,
+                )
+              }
             />
           ))}
         </div>
 
-        {/* Desktop: full content */}
+        {/* desktop full content */}
         <div className="hidden lg:block">
           {chapter.sections.map((section) => (
             <div
@@ -234,7 +256,7 @@ function NotesTab({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function MobileSection({
@@ -242,9 +264,9 @@ function MobileSection({
   isActive,
   onToggle,
 }: {
-  section: { id: string; title: string; content: string }
-  isActive: boolean
-  onToggle: () => void
+  section: { id: string; title: string; content: string };
+  isActive: boolean;
+  onToggle: () => void;
 }) {
   return (
     <div className="border border-border rounded-xl overflow-hidden">
@@ -252,7 +274,9 @@ function MobileSection({
         onClick={onToggle}
         className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-muted transition-colors"
       >
-        <span className="text-sm font-medium text-foreground">{section.title}</span>
+        <span className="text-sm font-medium text-foreground">
+          {section.title}
+        </span>
         {isActive ? (
           <ChevronUp className="w-4 h-4 text-muted-foreground shrink-0" />
         ) : (
@@ -267,5 +291,5 @@ function MobileSection({
         </div>
       )}
     </div>
-  )
+  );
 }
