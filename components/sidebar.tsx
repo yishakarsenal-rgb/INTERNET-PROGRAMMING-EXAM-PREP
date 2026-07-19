@@ -1,20 +1,27 @@
-"use client"
+"use client";
 
-import { CheckCircle2, Circle, BookOpen, X, Home, ClipboardList } from "lucide-react"
-import { Course } from "@/lib/course-data"
+import {
+  CheckCircle2,
+  Circle,
+  BookOpen,
+  X,
+  Home,
+  ClipboardList,
+} from "lucide-react";
+import { Course } from "@/lib/course-data";
 
 type Props = {
-  courses: Course[]
-  activeChapterId: string | null
-  completedChapters: Set<string>
-  quizScores: Record<string, number>
-  onSelectChapter: (id: string) => void
-  onSelectHome: () => void
-  onOpenMockExam: () => void
-  isMockExamActive: boolean
-  isOpen: boolean
-  onClose: () => void
-}
+  courses: Course[];
+  activeChapterId: string | null;
+  completedChapters: Set<string>;
+  quizScores: Record<string, number>;
+  onSelectChapter: (id: string) => void;
+  onSelectHome: () => void;
+  onOpenMockExam: () => void;
+  isMockExamActive: boolean;
+  isOpen: boolean;
+  onClose: () => void;
+};
 
 export default function Sidebar({
   courses,
@@ -28,13 +35,14 @@ export default function Sidebar({
   isOpen,
   onClose,
 }: Props) {
-  const totalChapters = courses.flatMap((c) => c.chapters).length
-  const completedCount = completedChapters.size
-  const progress = totalChapters > 0 ? Math.round((completedCount / totalChapters) * 100) : 0
+  const totalChapters = courses.flatMap((c) => c.chapters).length;
+  const completedCount = completedChapters.size;
+  const progress =
+    totalChapters > 0 ? Math.round((completedCount / totalChapters) * 100) : 0;
 
   return (
     <>
-      {/* Backdrop for mobile */}
+      {/* backdrop for mobile */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-20 lg:hidden"
@@ -52,7 +60,7 @@ export default function Sidebar({
         `}
         aria-label="Course navigation"
       >
-        {/* Header */}
+        {/* header */}
         <div className="flex items-center justify-between px-4 py-4 border-b border-border/60">
           <button
             onClick={onSelectHome}
@@ -66,7 +74,9 @@ export default function Sidebar({
               <p className="text-sm font-semibold text-foreground leading-none group-hover:text-primary transition-colors">
                 IP Study Hub
               </p>
-              <p className="text-xs text-muted-foreground leading-none mt-0.5">COSC 3031/3032</p>
+              <p className="text-xs text-muted-foreground leading-none mt-0.5">
+                COSC 3031/3032
+              </p>
             </div>
           </button>
           <button
@@ -78,11 +88,15 @@ export default function Sidebar({
           </button>
         </div>
 
-        {/* Progress bar */}
+        {/* progress bar */}
         <div className="px-4 py-3 border-b border-border/60">
           <div className="flex items-center justify-between mb-1.5">
-            <span className="text-xs text-muted-foreground">Overall progress</span>
-            <span className="text-xs font-medium text-foreground">{completedCount}/{totalChapters}</span>
+            <span className="text-xs text-muted-foreground">
+              Overall progress
+            </span>
+            <span className="text-xs font-medium text-foreground">
+              {completedCount}/{totalChapters}
+            </span>
           </div>
           <div className="h-1.5 bg-muted rounded-full overflow-hidden">
             <div
@@ -96,7 +110,7 @@ export default function Sidebar({
           </div>
         </div>
 
-        {/* Nav buttons */}
+        {/* nav buttons */}
         <div className="px-2 pt-2 space-y-0.5">
           <button
             onClick={onSelectHome}
@@ -126,8 +140,11 @@ export default function Sidebar({
           </button>
         </div>
 
-        {/* Course list */}
-        <nav className="flex-1 overflow-y-auto px-2 pb-4 mt-2" aria-label="Chapters">
+        {/* course list */}
+        <nav
+          className="flex-1 overflow-y-auto px-2 pb-4 mt-2"
+          aria-label="Chapters"
+        >
           {courses.map((course) => (
             <CourseSection
               key={course.id}
@@ -141,7 +158,7 @@ export default function Sidebar({
         </nav>
       </aside>
     </>
-  )
+  );
 }
 
 function CourseSection({
@@ -151,21 +168,25 @@ function CourseSection({
   quizScores,
   onSelectChapter,
 }: {
-  course: Course
-  activeChapterId: string | null
-  completedChapters: Set<string>
-  quizScores: Record<string, number>
-  onSelectChapter: (id: string) => void
+  course: Course;
+  activeChapterId: string | null;
+  completedChapters: Set<string>;
+  quizScores: Record<string, number>;
+  onSelectChapter: (id: string) => void;
 }) {
-  const completedInCourse = course.chapters.filter((ch) => completedChapters.has(ch.id)).length
-  const isIPII = course.id === "IP-II"
+  const completedInCourse = course.chapters.filter((ch) =>
+    completedChapters.has(ch.id),
+  ).length;
+  const isIPII = course.id === "IP-II";
 
   return (
     <div className="mb-3">
       <div className="flex items-center gap-2 px-2 py-1.5 rounded-md">
-        <div className={`w-2 h-2 rounded-full shrink-0 ${
-          isIPII ? "bg-emerald-500" : "bg-cyan-400"
-        }`} />
+        <div
+          className={`w-2 h-2 rounded-full shrink-0 ${
+            isIPII ? "bg-emerald-500" : "bg-cyan-400"
+          }`}
+        />
         <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           {course.id} — {course.chapters.length} ch
         </span>
@@ -176,9 +197,9 @@ function CourseSection({
 
       <div className="mt-0.5 space-y-0.5">
         {course.chapters.map((chapter) => {
-          const isChapterActive = chapter.id === activeChapterId
-          const isCompleted = completedChapters.has(chapter.id)
-          const score = quizScores[chapter.id]
+          const isChapterActive = chapter.id === activeChapterId;
+          const isCompleted = completedChapters.has(chapter.id);
+          const score = quizScores[chapter.id];
 
           return (
             <button
@@ -202,20 +223,22 @@ function CourseSection({
                 Ch.{chapter.number} — {chapter.title}
               </span>
               {score !== undefined && (
-                <span className={`text-xs shrink-0 font-medium ${
-                  score === chapter.quiz.length
-                    ? "text-emerald-500"
-                    : score >= chapter.quiz.length * 0.6
-                    ? "text-yellow-500"
-                    : "text-red-400"
-                }`}>
+                <span
+                  className={`text-xs shrink-0 font-medium ${
+                    score === chapter.quiz.length
+                      ? "text-emerald-500"
+                      : score >= chapter.quiz.length * 0.6
+                        ? "text-yellow-500"
+                        : "text-red-400"
+                  }`}
+                >
                   {score}/{chapter.quiz.length}
                 </span>
               )}
             </button>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }
