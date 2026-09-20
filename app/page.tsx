@@ -77,7 +77,6 @@ export default function Home() {
 
   return (
     <div className="flex h-screen overflow-hidden relative">
-      {/* animated water background */}
       <WaterBackground />
 
       <Sidebar
