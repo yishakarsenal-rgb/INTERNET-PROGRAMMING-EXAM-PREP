@@ -123,7 +123,6 @@ export default function Home() {
           )}
         </div>
 
-        {/* footer */}
         <footer className="py-4 px-6 border-t border-border/50 text-center">
           <p className="text-xs text-muted-foreground">
             Made <span className="text-red-400"></span> by Yishak Mekuannent
