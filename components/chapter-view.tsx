@@ -215,7 +215,6 @@ function NotesTab({
         </div>
       </nav>
 
-      {/* section content */}
       <div className="flex-1 min-w-0">
         {/* mobile accordion */}
         <div className="lg:hidden space-y-3 mb-4">
