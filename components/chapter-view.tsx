@@ -133,7 +133,6 @@ export default function ChapterView({
           />
         </div>
 
-        {/* Tab content */}
         {tab === "notes" ? (
           <NotesTab
             chapter={chapter}
