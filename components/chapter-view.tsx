@@ -95,7 +95,6 @@ export default function ChapterView({
       </header>
 
       <div className="flex-1 max-w-4xl mx-auto w-full px-4 py-6">
-        {/* Chapter info */}
         <div className="mb-6">
           <h2 className="text-xl font-bold text-foreground text-balance mb-1">
             {chapter.title}
