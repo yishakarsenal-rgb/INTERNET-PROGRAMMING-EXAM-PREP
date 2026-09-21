@@ -104,7 +104,6 @@ export default function ChapterView({
           </p>
         </div>
 
-        {/* Objectives */}
         <div className={`mb-6 p-4 rounded-xl border ${accentColor}`}>
           <h3 className="text-xs font-semibold uppercase tracking-wider mb-2.5 opacity-70">
             Learning Objectives
