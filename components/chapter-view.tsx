@@ -118,7 +118,6 @@ export default function ChapterView({
           </ul>
         </div>
 
-        {/* Tabs */}
         <div className="flex gap-1 p-1 bg-muted rounded-lg mb-6 w-fit">
           <TabButton
             active={tab === "notes"}
