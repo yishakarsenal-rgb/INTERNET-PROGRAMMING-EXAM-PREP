@@ -49,7 +49,6 @@ export default function ChapterView({
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
       <header className="sticky top-0 z-10 bg-background/50 backdrop-blur-xl border-b border-border/50 px-4 py-3">
         <div className="max-w-4xl mx-auto flex items-center gap-3">
           <button
