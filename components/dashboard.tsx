@@ -135,7 +135,6 @@ export default function Dashboard({
           </div>
         </button>
 
-        {/* continue learning banner */}
         {nextChapter && (
           <div className="mb-8 p-4 rounded-xl border border-border/60 bg-card/60 backdrop-blur-md flex items-center gap-4">
             <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
