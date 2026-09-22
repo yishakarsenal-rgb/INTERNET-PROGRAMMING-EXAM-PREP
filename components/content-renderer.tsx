@@ -37,7 +37,6 @@ export default function ContentRenderer({ content }: { content: string }) {
       continue;
     }
 
-    // table
     if (
       line.startsWith("|") &&
       i + 1 < lines.length &&
