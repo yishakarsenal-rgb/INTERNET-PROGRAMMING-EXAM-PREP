@@ -105,7 +105,6 @@ export default function Dashboard({
           />
         </div>
 
-        {/* mock exam */}
         <button
           onClick={onOpenMockExam}
           className="w-full mb-6 group relative overflow-hidden rounded-2xl border border-amber-500/30 bg-card/70 backdrop-blur-md hover:border-amber-400/60 transition-all duration-300 text-left"
