@@ -67,7 +67,6 @@ export default function Dashboard({
       </header>
 
       <div className="max-w-5xl mx-auto px-4 py-8">
-        {/* hero */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-foreground text-balance">
             Internet Programming Study Hub
