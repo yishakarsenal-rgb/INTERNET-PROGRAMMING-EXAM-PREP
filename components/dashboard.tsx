@@ -76,7 +76,6 @@ export default function Dashboard({
           </p>
         </div>
 
-        {/* stats cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <StatCard
             icon={<BookOpen className="w-4 h-4" />}
