@@ -55,7 +55,6 @@ export default function Dashboard({
 
   return (
     <div className="min-h-screen">
-      {/* top bar */}
       <header className="sticky top-0 z-10 bg-background/50 backdrop-blur-xl border-b border-border/50 px-4 py-3 flex items-center gap-3">
         <button
           onClick={onOpenSidebar}
