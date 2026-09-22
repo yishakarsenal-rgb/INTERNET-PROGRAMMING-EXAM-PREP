@@ -119,7 +119,6 @@ export default function ContentRenderer({ content }: { content: string }) {
       continue;
     }
 
-    // bullet list
     if (line.startsWith("- ")) {
       const items: string[] = [];
       while (i < lines.length && lines[i].startsWith("- ")) {
