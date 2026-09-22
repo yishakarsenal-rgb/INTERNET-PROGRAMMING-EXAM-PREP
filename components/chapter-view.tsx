@@ -232,7 +232,6 @@ function NotesTab({
           ))}
         </div>
 
-        {/* desktop full content */}
         <div className="hidden lg:block">
           {chapter.sections.map((section) => (
             <div
