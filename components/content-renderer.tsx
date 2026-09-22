@@ -165,7 +165,6 @@ export default function ContentRenderer({ content }: { content: string }) {
       i++;
       continue;
     }
-    // paragraph
     elements.push(
       <p key={i} className="text-sm text-foreground/90 leading-relaxed my-2">
         {inlineFormat(line)}
