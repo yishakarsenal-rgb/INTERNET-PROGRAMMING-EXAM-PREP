@@ -88,7 +88,6 @@ export default function ContentRenderer({ content }: { content: string }) {
       continue;
     }
 
-    // headings
     if (line.startsWith("### ")) {
       elements.push(
         <h4 key={i} className="text-sm font-semibold text-foreground mt-5 mb-2">
