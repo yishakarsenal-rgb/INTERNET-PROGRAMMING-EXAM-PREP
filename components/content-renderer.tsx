@@ -141,7 +141,6 @@ export default function ContentRenderer({ content }: { content: string }) {
       continue;
     }
 
-    // numbered list
     if (/^\d+\. /.test(line)) {
       const items: string[] = [];
       while (i < lines.length && /^\d+\. /.test(lines[i])) {
