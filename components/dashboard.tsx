@@ -159,7 +159,6 @@ export default function Dashboard({
           </div>
         )}
 
-        {/* courses */}
         <div className="space-y-8">
           {courses.map((course) => (
             <CourseBlock
