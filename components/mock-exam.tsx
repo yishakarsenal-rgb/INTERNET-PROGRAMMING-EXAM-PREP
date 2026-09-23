@@ -692,7 +692,6 @@ const QUESTIONS: Question[] = [
     correct: 1,
   },
 
-  // ── ch 6 State Management ──
   {
     id: 76,
     topic: "State Management",
