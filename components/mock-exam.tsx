@@ -566,7 +566,6 @@ const QUESTIONS: Question[] = [
     correct: 3,
   },
 
-  // ── ch 5 PHP Fundamentals ──
   {
     id: 61,
     topic: "PHP",
