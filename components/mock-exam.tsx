@@ -420,7 +420,6 @@ const QUESTIONS: Question[] = [
     correct: 0,
   },
 
-  // ── ch 4 JavaScript ──
   {
     id: 46,
     topic: "JavaScript",
