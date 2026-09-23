@@ -1008,7 +1008,6 @@ function CircularTimer({ secondsLeft }: { secondsLeft: number }) {
     </div>
   );
 }
-// main component
 type ExamStatus = "idle" | "running" | "submitted" | "timeout";
 export default function MockExam({
   onBack,
