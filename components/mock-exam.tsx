@@ -14,7 +14,6 @@ import {
   Clock,
 } from "lucide-react";
 
-// 100 question covering ch1–7
 type Question = {
   id: number;
   topic: string;
