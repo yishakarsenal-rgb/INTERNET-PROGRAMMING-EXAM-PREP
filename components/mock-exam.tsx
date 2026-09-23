@@ -22,7 +22,6 @@ type Question = {
   correct: 0 | 1 | 2 | 3;
 };
 const QUESTIONS: Question[] = [
-  // ── ch 1 internet and protocols ──
   {
     id: 1,
     topic: "Internet & Protocols",
