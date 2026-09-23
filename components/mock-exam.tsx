@@ -1190,7 +1190,6 @@ export default function MockExam({
     );
   }
 
-  // ── running exam ──
   const q = QUESTIONS[currentIdx];
   const answeredCount = answers.filter((a) => a !== null).length;
   const flaggedCount = flagged.filter(Boolean).length;
