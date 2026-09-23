@@ -951,7 +951,7 @@ const QUESTIONS: Question[] = [
 ];
 
 const TOTAL_QUESTIONS = QUESTIONS.length;
-const EXAM_DURATION = 60 * 60; // 60 minutes in seconds
+const EXAM_DURATION = 60 * 60;
 
 // circular timer
 function CircularTimer({ secondsLeft }: { secondsLeft: number }) {
