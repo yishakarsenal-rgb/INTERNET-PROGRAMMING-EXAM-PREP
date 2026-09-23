@@ -960,11 +960,7 @@ function CircularTimer({ secondsLeft }: { secondsLeft: number }) {
   const offset = circumference * (1 - fraction);
 
   const color =
-    fraction > 0.5
-      ? "#22c55e" // green
-      : fraction > 0.25
-        ? "#f59e0b" // amber
-        : "#ef4444"; // red
+    fraction > 0.5 ? "#22c55e" : fraction > 0.25 ? "#f59e0b" : "#ef4444";
 
   const mm = String(Math.floor(secondsLeft / 60)).padStart(2, "0");
   const ss = String(secondsLeft % 60).padStart(2, "0");
