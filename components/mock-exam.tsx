@@ -279,7 +279,6 @@ const QUESTIONS: Question[] = [
     correct: 2,
   },
 
-  // ── ch 3 CSS ──
   {
     id: 31,
     topic: "CSS",
