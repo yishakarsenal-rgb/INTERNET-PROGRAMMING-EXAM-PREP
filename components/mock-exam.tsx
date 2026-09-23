@@ -148,7 +148,6 @@ const QUESTIONS: Question[] = [
     correct: 3,
   },
 
-  // ── ch 2 HTML ──
   {
     id: 16,
     topic: "HTML",
