@@ -1178,7 +1178,6 @@ export default function MockExam({
     );
   }
 
-  // ── results screen ──
   if (status === "submitted" || status === "timeout") {
     return (
       <ResultsScreen
