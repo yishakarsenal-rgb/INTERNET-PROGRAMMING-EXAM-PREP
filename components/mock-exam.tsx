@@ -1104,7 +1104,6 @@ export default function MockExam({
     }
   };
 
-  // ── idle screen ──
   if (status === "idle") {
     return (
       <div className="min-h-screen flex flex-col">
