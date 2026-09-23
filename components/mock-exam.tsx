@@ -953,7 +953,6 @@ const QUESTIONS: Question[] = [
 const TOTAL_QUESTIONS = QUESTIONS.length;
 const EXAM_DURATION = 60 * 60;
 
-// circular timer
 function CircularTimer({ secondsLeft }: { secondsLeft: number }) {
   const radius = 40;
   const circumference = 2 * Math.PI * radius;
