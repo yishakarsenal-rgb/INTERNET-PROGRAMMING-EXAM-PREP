@@ -848,7 +848,6 @@ const QUESTIONS: Question[] = [
     correct: 1,
   },
 
-  // ── ch 7 PHP & MySQL ──
   {
     id: 91,
     topic: "MySQL",
