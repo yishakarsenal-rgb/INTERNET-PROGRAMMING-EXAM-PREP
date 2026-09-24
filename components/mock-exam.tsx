@@ -1368,7 +1368,6 @@ export default function MockExam({
     </div>
   );
 }
-// question grid
 function QuestionGrid({
   total,
   currentIdx,
