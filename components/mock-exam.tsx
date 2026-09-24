@@ -1254,7 +1254,6 @@ export default function MockExam({
             )}
           </div>
 
-          {/* question */}
           <div className="p-5 rounded-xl border border-border bg-card/70 backdrop-blur-md mb-5">
             <p className="text-sm font-medium text-foreground leading-relaxed">
               {q.q}
