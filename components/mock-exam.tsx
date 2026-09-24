@@ -1288,7 +1288,6 @@ export default function MockExam({
             })}
           </div>
 
-          {/* actions */}
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <div className="flex gap-2">
               <button
