@@ -1336,7 +1336,6 @@ export default function MockExam({
           </div>
         </div>
 
-        {/* desktop sidebar grid */}
         <aside
           className="hidden lg:block w-64 shrink-0 ml-6"
           aria-label="Question navigation grid"
