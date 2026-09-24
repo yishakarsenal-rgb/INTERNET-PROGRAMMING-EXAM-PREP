@@ -1419,7 +1419,6 @@ function GridLegend({ color, label }: { color: string; label: string }) {
     </div>
   );
 }
-// shared header
 function ExamHeader({
   title,
   onOpenSidebar,
