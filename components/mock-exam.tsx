@@ -1538,7 +1538,6 @@ function ResultsScreen({
           </p>
         </div>
 
-        {/* topic breakdown */}
         <div>
           <h3 className="text-sm font-semibold text-foreground mb-3">
             Performance by Topic
