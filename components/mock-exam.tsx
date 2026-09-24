@@ -1243,7 +1243,6 @@ export default function MockExam({
 
       <div className="flex-1 flex gap-0 max-w-6xl mx-auto w-full px-4 py-6">
         <div className="flex-1 min-w-0 flex flex-col">
-          {/* topic chip */}
           <div className="flex items-center gap-2 mb-4">
             <span className="text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium border border-primary/20">
               {q.topic}
