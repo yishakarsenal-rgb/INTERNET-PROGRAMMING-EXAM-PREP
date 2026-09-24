@@ -1510,7 +1510,6 @@ function ResultsScreen({
           </div>
         )}
 
-        {/* score card */}
         <div
           className={`p-6 rounded-2xl border ${grade.bg}/15 border-current/${20} text-center`}
           style={{
