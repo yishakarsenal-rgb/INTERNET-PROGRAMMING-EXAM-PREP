@@ -1472,7 +1472,6 @@ function ResultsScreen({
   const percent = Math.round((score / TOTAL_QUESTIONS) * 100);
   const unanswered = answers.filter((a) => a === null).length;
 
-  // per-topic breakdown
   const topics = Array.from(new Set(QUESTIONS.map((q) => q.topic)));
   const topicStats = topics.map((topic) => {
     const qs = QUESTIONS.filter((q) => q.topic === topic);
