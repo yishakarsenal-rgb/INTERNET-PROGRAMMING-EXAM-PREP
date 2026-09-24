@@ -1501,7 +1501,6 @@ function ResultsScreen({
       />
 
       <div className="flex-1 max-w-3xl mx-auto w-full px-4 py-8 space-y-6">
-        {/* timeout banner */}
         {timedOut && (
           <div className="flex items-center gap-3 p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-400">
             <AlertTriangle className="w-5 h-5 shrink-0" />
