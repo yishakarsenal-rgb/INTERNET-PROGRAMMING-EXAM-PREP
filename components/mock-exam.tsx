@@ -1455,7 +1455,6 @@ function ExamHeader({
     </header>
   );
 }
-// results screen
 function ResultsScreen({
   answers,
   onRetake,
