@@ -1229,7 +1229,6 @@ export default function MockExam({
         </button>
       </div>
 
-      {/* mobile grid overlay */}
       {showGrid && (
         <div className="lg:hidden mx-4 my-2 p-3 rounded-xl border border-border bg-card/80 backdrop-blur-md">
           <QuestionGrid
