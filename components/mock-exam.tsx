@@ -1242,7 +1242,6 @@ export default function MockExam({
       )}
 
       <div className="flex-1 flex gap-0 max-w-6xl mx-auto w-full px-4 py-6">
-        {/* question + options */}
         <div className="flex-1 min-w-0 flex flex-col">
           {/* topic chip */}
           <div className="flex items-center gap-2 mb-4">
