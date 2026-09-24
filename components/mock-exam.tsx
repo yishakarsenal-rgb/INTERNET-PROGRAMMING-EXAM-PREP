@@ -1220,7 +1220,6 @@ export default function MockExam({
         }
       />
 
-      {/* mobile grid toggle */}
       <div className="lg:hidden flex justify-end px-4 pt-3">
         <button
           onClick={() => setShowGrid(!showGrid)}
