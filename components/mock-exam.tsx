@@ -1260,7 +1260,6 @@ export default function MockExam({
             </p>
           </div>
 
-          {/* options */}
           <div className="space-y-3 mb-6">
             {q.options.map((opt, i) => {
               const isSelected = selectedOption === i;
