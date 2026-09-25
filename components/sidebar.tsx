@@ -59,7 +59,6 @@ export default function Sidebar({
         `}
         aria-label="Course navigation"
       >
-        {/* header */}
         <div className="flex items-center justify-between px-4 py-4 border-b border-border/60">
           <button
             onClick={onSelectHome}
