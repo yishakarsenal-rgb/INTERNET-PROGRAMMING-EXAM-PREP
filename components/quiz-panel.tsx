@@ -170,7 +170,6 @@ export default function QuizPanel({
         })}
       </div>
 
-      {/* explanation */}
       {isAnswered && (
         <div
           className={`mb-6 p-4 rounded-xl border ${
