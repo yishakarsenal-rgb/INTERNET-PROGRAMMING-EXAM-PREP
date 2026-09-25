@@ -228,7 +228,6 @@ function ResultsScreen({
 
   return (
     <div className="max-w-2xl">
-      {/* score card */}
       <div
         className={`p-6 rounded-2xl border mb-6 text-center ${
           isPerfect
