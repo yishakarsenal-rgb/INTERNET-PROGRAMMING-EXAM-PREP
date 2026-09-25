@@ -114,7 +114,6 @@ export default function QuizPanel({
         </div>
       </div>
 
-      {/* question */}
       <div className="mb-6 p-5 rounded-xl border border-border bg-card">
         <p className="text-sm font-medium text-foreground leading-relaxed">
           {current.question}
