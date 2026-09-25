@@ -271,7 +271,6 @@ function ResultsScreen({
         <p className="text-sm text-muted-foreground">{percent}% correct</p>
       </div>
 
-      {/* question review */}
       <h3 className="text-sm font-semibold text-foreground mb-3">
         Review Answers
       </h3>
