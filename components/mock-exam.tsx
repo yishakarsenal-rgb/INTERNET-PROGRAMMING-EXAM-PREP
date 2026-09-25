@@ -1578,7 +1578,6 @@ function ResultsScreen({
           </div>
         </div>
 
-        {/* answer review */}
         <div>
           <h3 className="text-sm font-semibold text-foreground mb-3">
             Answer Review
