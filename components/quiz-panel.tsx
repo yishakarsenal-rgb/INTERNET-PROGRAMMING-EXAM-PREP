@@ -120,7 +120,6 @@ export default function QuizPanel({
         </p>
       </div>
 
-      {/* options */}
       <div className="space-y-3 mb-6">
         {current.options.map((option, i) => {
           const state: AnswerState = !isAnswered
