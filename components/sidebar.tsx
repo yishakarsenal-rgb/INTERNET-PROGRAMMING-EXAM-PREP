@@ -107,7 +107,6 @@ export default function Sidebar({
           </div>
         </div>
 
-        {/* nav buttons */}
         <div className="px-2 pt-2 space-y-0.5">
           <button
             onClick={onSelectHome}
