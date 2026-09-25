@@ -136,7 +136,6 @@ export default function Sidebar({
           </button>
         </div>
 
-        {/* course list */}
         <nav
           className="flex-1 overflow-y-auto px-2 pb-4 mt-2"
           aria-label="Chapters"
