@@ -1626,7 +1626,6 @@ function ResultsScreen({
           </div>
         </div>
 
-        {/* actions */}
         <div className="flex gap-3 flex-wrap">
           <button
             onClick={onRetake}
