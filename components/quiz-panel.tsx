@@ -196,7 +196,6 @@ export default function QuizPanel({
         </div>
       )}
 
-      {/* next button */}
       {isAnswered && (
         <button
           onClick={handleNext}
