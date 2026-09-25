@@ -42,7 +42,6 @@ export default function Sidebar({
 
   return (
     <>
-      {/* backdrop for mobile */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-20 lg:hidden"
