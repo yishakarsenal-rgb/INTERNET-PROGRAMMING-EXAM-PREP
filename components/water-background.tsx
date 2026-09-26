@@ -6,7 +6,6 @@ export default function WaterBackground() {
     >
       <div className="absolute inset-0 dark:bg-gradient-to-br dark:from-slate-950 dark:via-blue-950/40 dark:to-cyan-950/30 bg-gradient-to-br from-sky-50 via-cyan-50/60 to-blue-100/80" />
 
-      {/* blob 1 large deep teal splash, top-left */}
       <div
         className="water-blob-1 absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full
           dark:bg-[radial-gradient(circle,rgba(6,182,212,0.22)_0%,rgba(14,116,144,0.12)_45%,transparent_70%)]
