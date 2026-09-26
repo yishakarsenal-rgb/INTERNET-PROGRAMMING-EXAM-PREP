@@ -24,7 +24,6 @@ export default function WaterBackground() {
           bg-[radial-gradient(circle,rgba(103,232,249,0.22)_0%,rgba(34,211,238,0.10)_50%,transparent_70%)]"
       />
 
-      {/* blob 4 deep blue, upper-right */}
       <div
         className="water-blob-1 absolute -top-16 right-1/4 w-[350px] h-[350px] rounded-full
           dark:bg-[radial-gradient(circle,rgba(37,99,235,0.14)_0%,transparent_65%)]
