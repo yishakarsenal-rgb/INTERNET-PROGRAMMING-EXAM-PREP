@@ -18,7 +18,6 @@ export default function WaterBackground() {
           bg-[radial-gradient(circle,rgba(186,230,253,0.45)_0%,rgba(147,197,253,0.20)_50%,transparent_70%)]"
       />
 
-      {/* blob 3 glowing cyan accent, center-right */}
       <div
         className="water-blob-3 absolute top-1/3 -right-24 w-[450px] h-[450px] rounded-full
           dark:bg-[radial-gradient(circle,rgba(20,184,166,0.18)_0%,rgba(6,148,162,0.08)_50%,transparent_70%)]
