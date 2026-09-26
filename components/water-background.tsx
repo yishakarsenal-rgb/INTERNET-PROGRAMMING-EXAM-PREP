@@ -44,7 +44,6 @@ export default function WaterBackground() {
         }}
       />
 
-      {/* frosted glass vignette to keep content readable */}
       <div className="absolute inset-0 dark:bg-gradient-to-b dark:from-transparent dark:via-transparent dark:to-background/60 bg-gradient-to-b from-transparent via-transparent to-background/40" />
     </div>
   );
