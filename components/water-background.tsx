@@ -4,7 +4,6 @@ export default function WaterBackground() {
       className="fixed inset-0 overflow-hidden pointer-events-none z-0"
       aria-hidden="true"
     >
-      {/* base gradient layer */}
       <div className="absolute inset-0 dark:bg-gradient-to-br dark:from-slate-950 dark:via-blue-950/40 dark:to-cyan-950/30 bg-gradient-to-br from-sky-50 via-cyan-50/60 to-blue-100/80" />
 
       {/* blob 1 large deep teal splash, top-left */}
