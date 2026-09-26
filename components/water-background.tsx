@@ -31,7 +31,6 @@ export default function WaterBackground() {
         style={{ animationDelay: "6s" }}
       />
 
-      {/* shimmer ripple lines horizontal wave effect */}
       <div
         className="water-shimmer absolute inset-0"
         style={{
